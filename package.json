@@ -1,0 +1,22 @@
+{
+	"name": "dark-studio",
+	"displayName": "Dark Studio Color Theme",
+	"description": "Dark Studio color theme for Visual Studio Code. Sourced from the Dark Studio theme (barnacker/dark_studio).",
+	"version": "1.0.0",
+	"publisher": "barnacker",
+	"engines": {
+		"vscode": "^1.95.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Dark Studio",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark_studio.json"
+			}
+		]
+	}
+}
