@@ -22,7 +22,7 @@
 		"notifications.background": "#13284B",
 		"notificationCenterHeader.background": "#13284B",
 		"menu.background": "#12100B",
-		"quickInput.background": "#13284B",
+		"quickInput.background": "#12100B",
 		"quickInput.foreground": "#FF8300",
 		"keybindingLabel.background": "#300F0066",
 		"editorWidget.background": "#300F00",
