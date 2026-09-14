@@ -522,42 +522,6 @@
 		{
 			"scope": [
 				"source.ts",
-				"keyword.operator"
-			],
-			"settings": {
-				"foreground": "#E54910"
-			}
-		},
-		{
-			"scope": [
-				"source.tsx",
-				"keyword.operator"
-			],
-			"settings": {
-				"foreground": "#E54910"
-			}
-		},
-		{
-			"scope": [
-				"source.js",
-				"keyword.operator"
-			],
-			"settings": {
-				"foreground": "#E54910"
-			}
-		},
-		{
-			"scope": [
-				"source.jsx",
-				"keyword.operator"
-			],
-			"settings": {
-				"foreground": "#E54910"
-			}
-		},
-		{
-			"scope": [
-				"source.ts",
 				"entity.name.type"
 			],
 			"settings": {
