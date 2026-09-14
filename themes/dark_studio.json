@@ -394,7 +394,7 @@
 		{
 			"scope": "keyword.operator",
 			"settings": {
-				"foreground": "#D694FA"
+				"foreground": "#DB0000"
 			}
 		},
 		{
