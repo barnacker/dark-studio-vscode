@@ -1,6 +1,7 @@
 {
 	"$schema": "vscode://schemas/color-theme",
 	"name": "Dark Studio",
+	"semanticHighlighting": true,
 	"colors": {
 		"activityBar.background": "#00040B",
 		"sideBar.background": "#0A0806",
