@@ -1,7 +1,6 @@
 {
 	"$schema": "vscode://schemas/color-theme",
 	"name": "Dark Studio",
-	"semanticHighlighting": true,
 	"colors": {
 		"activityBar.background": "#00040B",
 		"sideBar.background": "#0A0806",
@@ -381,6 +380,12 @@
 			}
 		},
 		{
+			"scope": "variable.other.constant",
+			"settings": {
+				"foreground": "#9EF019"
+			}
+		},
+		{
 			"scope": "punctuation",
 			"settings": {
 				"foreground": "#D694FA"
@@ -666,6 +671,54 @@
 			"settings": {
 				"foreground": "#1F9EFF"
 			}
+		},
+		{
+			"scope": "source.ts meta.function variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.ts meta.block variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.tsx meta.function variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.tsx meta.block variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.js meta.function variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.js meta.block variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.jsx meta.function variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.jsx meta.block variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
 		}
 	],
 	"semanticTokenColors": {
@@ -673,7 +726,7 @@
 			"foreground": "#E54910"
 		},
 		"variable.readonly": {
-			"foreground": "#E8E8E3"
+			"foreground": "#9EF019"
 		},
 		"parameter": {
 			"foreground": "#E54910"
