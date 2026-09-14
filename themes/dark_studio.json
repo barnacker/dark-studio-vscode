@@ -467,6 +467,15 @@
 			}
 		},
 		{
+			"scope": [
+				"variable.object.property",
+				"variable.other.enummember"
+			],
+			"settings": {
+				"foreground": "#1F9EFF"
+			}
+		},
+		{
 			"scope": "entity.name.tag",
 			"settings": {
 				"foreground": "#D694FA"
