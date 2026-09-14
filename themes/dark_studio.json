@@ -413,7 +413,6 @@
 				"entity.name.class",
 				"entity.name.namespace",
 				"entity.other.inherited-class",
-				"support.type",
 				"support.class"
 			],
 			"settings": {
@@ -422,6 +421,12 @@
 		},
 		{
 			"scope": "storage.type",
+			"settings": {
+				"foreground": "#D694FA"
+			}
+		},
+		{
+			"scope": "support.type",
 			"settings": {
 				"foreground": "#D694FA"
 			}
@@ -584,15 +589,6 @@
 		{
 			"scope": [
 				"source.ts",
-				"support.type"
-			],
-			"settings": {
-				"foreground": "#F9A201"
-			}
-		},
-		{
-			"scope": [
-				"source.ts",
 				"support.class"
 			],
 			"settings": {
@@ -630,15 +626,6 @@
 			"scope": [
 				"source.tsx",
 				"entity.other.inherited-class"
-			],
-			"settings": {
-				"foreground": "#F9A201"
-			}
-		},
-		{
-			"scope": [
-				"source.tsx",
-				"support.type"
 			],
 			"settings": {
 				"foreground": "#F9A201"
