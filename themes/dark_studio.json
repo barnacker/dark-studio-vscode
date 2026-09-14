@@ -409,7 +409,6 @@
 		},
 		{
 			"scope": [
-				"storage.type",
 				"entity.name.type",
 				"entity.name.class",
 				"entity.name.namespace",
@@ -419,6 +418,12 @@
 			],
 			"settings": {
 				"foreground": "#7CB375"
+			}
+		},
+		{
+			"scope": "storage.type",
+			"settings": {
+				"foreground": "#D694FA"
 			}
 		},
 		{
@@ -543,15 +548,6 @@
 		{
 			"scope": [
 				"source.ts",
-				"storage.type"
-			],
-			"settings": {
-				"foreground": "#F9A201"
-			}
-		},
-		{
-			"scope": [
-				"source.ts",
 				"entity.name.type"
 			],
 			"settings": {
@@ -598,15 +594,6 @@
 			"scope": [
 				"source.ts",
 				"support.class"
-			],
-			"settings": {
-				"foreground": "#F9A201"
-			}
-		},
-		{
-			"scope": [
-				"source.tsx",
-				"storage.type"
 			],
 			"settings": {
 				"foreground": "#F9A201"
