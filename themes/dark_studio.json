@@ -673,7 +673,7 @@
 			"foreground": "#E54910"
 		},
 		"variable.readonly": {
-			"foreground": "#9EF019"
+			"foreground": "#E8E8E3"
 		},
 		"parameter": {
 			"foreground": "#E54910"
