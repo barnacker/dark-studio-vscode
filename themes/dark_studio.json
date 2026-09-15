@@ -198,7 +198,7 @@
 		"suggestions.selectedForeground": "#FFFFFF",
 		"suggestions.selectedIconForeground": "#FF8300",
 		"suggestions.rangeHighlightBackground": "#152E5566",
-		"editorCursor.foreground": "#9E9E96",
+		"editorCursor.foreground": "#C7C7BD",
 		"editorCursor.background": "#0D1A32",
 		"editor.selectionBackground": "#13284B99",
 		"editor.inactiveSelectionBackground": "#13284B55",
