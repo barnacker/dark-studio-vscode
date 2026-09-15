@@ -35,11 +35,13 @@
 		"surface.border": "#00000000",
 		"tab.unfocusedActiveBorder": "#00040B",
 		"textPreformat.background": "#300F00",
-		"modernActivityBar.activeBackground": "#152E5566",
+		"modernActivityBar.activeBackground": "#0D1A32",
 		"modernActivityBar.hoverBackground": "#152E5533",
 		"inputOption.activeBackground": "#13284B99",
 		"foreground": "#FF8300",
 		"editor.foreground": "#C7C7BD",
+		"editor.lineHighlightBackground": "#011F27",
+		"editor.lineHighlight.activeBackground": "#011F27",
 		"terminal.foreground": "#FF8300",
 		"icon.foreground": "#FF8300",
 		"descriptionForeground": "#C2C2C2",
@@ -54,8 +56,8 @@
 		"statusBar.foreground": "#FF8300",
 		"titleBar.activeForeground": "#FF8300",
 		"titleBar.inactiveForeground": "#A96000",
-		"activityBar.foreground": "#FF8300",
-		"activityBar.inactiveForeground": "#A96000",
+		"activityBar.foreground": "#DB0000",
+		"activityBar.inactiveForeground": "#DB0000",
 		"notifications.foreground": "#FF8300",
 		"notificationCenterHeader.foreground": "#FF8300",
 		"tab.activeForeground": "#FF8300",
@@ -114,8 +116,8 @@
 		"focusBorder": "#FF8300",
 		"sash.hoverBorder": "#FF8300",
 		"sash.activeBorder": "#FF8300",
-		"activityBar.activeBorder": "#FF8300",
-		"activityBar.activeFocusBorder": "#FF8300",
+		"activityBar.activeBorder": "#DB0000",
+		"activityBar.activeFocusBorder": "#DB0000",
 		"panelTitle.activeBorder": "#FF8300",
 		"tab.activeBorder": "#0D1A32",
 		"tab.activeBorderTop": "#FF8300",
@@ -332,6 +334,164 @@
 		"breadcrumb.selectionBackground": "#00000000"
 	},
 	"tokenColors": [
+	// =====================================================================
+	// tokenColors — how this file is READ, which rules are load-bearing,
+	// and the one model that is easiest to silently break (constants).
+	// =====================================================================
+	// FORMAT: the theme loader (vs/workbench/services/themes/common/
+	// colorThemeData.ts, _loadColorTheme, verified in the 1.137.0 build
+	// installed on this machine) parses theme files with the internal
+	// Json.parse at its DEFAULT options — comments are allowed (base/
+	// common/json.ts: ParseOptions.DEFAULT sets no disallowComments).
+	// These // comments load fine; keep them whole-line. Do not put //
+	// inside a string value in this file.
+	//
+	// EDIT / VALIDATE LOOP (run from the theme repo):
+	//   1. Strip whole-line comments, strict JSON.parse the rest, deep-
+	//      compare the object with the pre-edit parse: identical for a
+	//      docs-only change; differing exactly in the intended rule
+	//      entries for a color change.
+	//   2. Rule counts must hold: colors 328 / tokenColors 46 /
+	//      semanticTokenColors 20 (as of 2026-09). Recompute after any
+	//      edit.
+	//   3. "code --list-extensions --show-versions" still lists
+	//      barnacker.dark-studio; then the user runs Reload Window and
+	//      visually confirms. Never claim a recolor looks right without
+	//      the user checking the editor.
+	//
+	// PALETTE SOURCES (two reference layers — never mix them):
+	//   colors (328 UI tokens)     verbatim Dark_Studio (.obt) values.
+	//   tokenColors + semantic*    syntax recolors from the LazyBrutal
+	//                             nvim starter (barnacker/LazyBrutal,
+	//                             colors/brutal.lua), Treesitter layer:
+	//                             @constant #9EF019 (lime), @string
+	//                             #F5C024 italic, @keyword #B194FA,
+	//                             @operator/delimiter #D694FA, @variable
+	//                             #E54910, @function #F0612D, plain text
+	//                             #E8E8E3. Note: the Vim group Constant
+	//                             in brutal.lua (#E52E2E) is NOT this
+	//                             themes constant color, by design — nvim
+	//                             colors constants via the Treesitter
+	//                             layer (lime); that is the reference to
+	//                             honor.
+	//
+	// HOW VS CODE MATCHES A RULE TO A TOKEN (ground truth: textMateScope-
+	// Matcher.ts + colorThemeData.ts resolveScopes in the 1.137.0 build
+	// installed here. The algorithm was ported line-for-line and run
+	// against the three observed genes below; it reproduces the intended
+	// colors. Re-read those two files after every VS Code upgrade before
+	// trusting this section):
+	//   * A "scope" value lists alternate paths (array entries OR — the
+	//     best one wins). Each path is space-separated scope names,
+	//     ANDed: the token stack must contain each name anywhere
+	//     (presence filter, no parent/child containment required). A name
+	//     also prefix-matches longer stack scopes ("string" matches
+	//     "string.quoted.single.ts"). "source.ts" is the document-level
+	//     scope: a language filter, never an ancestor of anything else.
+	//   * The score of a matched path is set ENTIRELY by its LAST-listed
+	//     name: (1 + the 0-based stack position of the innermost
+	//     occurrence of that name, outermost = 0) x 65536 + that name's
+	//     character length. A flat space-separated scope path is ONE
+	//     conjunction group, so names before the last only gate the
+	//     match (all must be present somewhere in the stack) — they do
+	//     not lower the score; the last name alone sets it. Deeper
+	//     position = higher score; at the same position a LONGER last-
+	//     listed name scores higher. (Verified 2026-09-14 by running
+	//     the real 1.137.0 nameMatcher on the arcs gene: rule 8 and
+	//     rule 7 both score 393239 = 6 x 65536 + 23 for
+	//     variable.other.constant at stack depth 5/6.)
+	//   * Winner = highest score. On an EXACT score tie the LATER rule in
+	//     this array wins (the resolver keeps a candidate on score >=
+	//     while scanning in file order). Rule order IS the tie-break.
+	//   * Consequences: (a) list the document/language scope first and
+	//     the deepest name LAST; (b) base rules come before the scoped
+	//     overrides that extend them; (c) a new rule whose last-listed
+	//     name is LONGER than an existing bases (e.g. ends in
+	//     variable.other.constant.ts) outranks the base at the same
+	//     depth EVEN IF LISTED FIRST — a silent global recolor of every
+	//     token carrying that longer scope. Compare last-name lengths
+	//     against existing rules before adding any.
+	//
+	// LAYOUT: generic scopes first; the constant cluster sits at array
+	// indices 7-11 (46 rules total) — index 7 holds the base
+	// variable.other.constant rule, indices 8-11 the four
+	// language-qualified overrides — then the source.{ts,tsx,js,jsx}
+	// entity-name block, then the remaining rules. Hard constraints:
+	// (a) keep 7 BEFORE 8-11 (file order is the tie-break, see above);
+	// (b) never insert a rule ending in .other.constant(.ts|tsx|js|jsx)
+	// before rule 7 or between 7 and 8 — it would outrank the rules it
+	// is meant to override.
+	//
+	// ── THE CONSTANT MODEL (rules 7-11) — the one load-bearing divergence ──
+	// Behavior agreed with barnacker 2026-09-14. The scope stacks below
+	// are genes read from the editor token inspector on
+	// carl/cortex/arc-store.ts, outermost-first:
+	//   rule 7    variable.other.constant .................. #9EF019 (lime)
+	//     Base limb — every constant token is LIME: declaration site
+	//     AND every reference.
+	//   rules 8-11  source.{ts,tsx,js,jsx} meta.function
+	//                 meta.definition.variable variable.other.constant
+	//                                                   ... #E8E8E3 (white)
+	//     Override limbs — a const declaration whose stack carries
+	//     meta.function goes white, so function-local bindings read as
+	//     locally bound.
+	// How each gene resolves (ported-matcher output, verified 2026-09-14):
+	//   const arcs = new Map(..) inside a function
+	//     [source.ts, meta.function.ts, meta.block.ts,
+	//      meta.var-single-variable.expr.ts, meta.definition.variable.ts,
+	//      variable.other.constant.ts]
+	//     -> rule 8 and rule 7 score IDENTICALLY (both last-list names
+	//        variable.other.constant at the same stack depth); rule 8 is
+	//        later in the file -> WHITE. This is a FILE-ORDER win, not a
+	//        depth win: if 8-11 are ever moved above rule 7, local
+	//        constants silently go lime.
+	//   faculty_id: ARC_STORE_FACULTY_ID inside a function (a constant
+	//     reference)
+	//     [source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts,
+	//      meta.objectliteral.ts, meta.object.member.ts,
+	//      variable.other.constant.ts]
+	//     -> no meta.definition.variable in the gene -> only rule 7
+	//        matches -> LIME.
+	//     History: commit 8dd85b1 shipped eight rules shaped "source.X
+	//      meta.function|meta.block variable.other.constant" that made
+	//     this usage white; the user objected on exactly this token. Do
+	//     not re-introduce any rule whose match set includes a constant
+	//     reference inside a function.
+	//   const ARC_STORE_FACULTY_ID = .. at module top level
+	//     [source.ts, meta.var.expr.ts,
+	//      meta.var-single-variable.expr.ts, meta.definition.variable.ts,
+	//      variable.other.constant.ts]
+	//     -> no meta.function in the stack -> only rule 7 matches ->
+	//        LIME, at the declaration and at every later reference.
+	//
+	// WHY meta.definition.variable: the installed typescript-basics
+	// grammar (extensions/typescript-basics/syntaxes/
+	// TypeScript.tmLanguage.json in the 1.137.0 build on this machine)
+	// names the beginCaptures of the const single-variable-name patterns
+	// (upper-name and plain-name forms, contexts named
+	// meta.var-single-variable.expr.ts) as "meta.definition.variable.ts
+	// variable.other.constant.ts"; the same scope also appears on
+	// destructuring rest elements and const function declarations. A
+	// reference site never carries that declaration context — the
+	// declaration-vs-use asymmetry is exactly what rules 8-11 key on.
+	//
+	// LET / VAR LOCALS: no gap, by grammar. let/var single-variable
+	// declarations are captured as "meta.definition.variable.ts
+	// variable.other.readwrite.ts" — readwrite, NOT constant — so rules
+	// 7-11 never match them; the base "variable" rule (#E8E8E3) colors
+	// let/var declarations and their references alike, which already
+	// satisfies the local-binding policy (white at decl and at use).
+	// No rules needed; re-check only if the grammar re-scopes let/var.
+	//
+	// SCOPE-GENE HYGIENE: the grammar ships with VS Code and drifts
+	// between releases; the usage-site vs decl-site split is an
+	// observation from the token inspector, not a grammar guarantee.
+	// Before adding or deleting a rule keyed on a specific scope,
+	// re-confirm that scope in Command Palette -> Developer: Inspect
+	// Editor Tokens on the exact construct, and paste the observed gene
+	// into the commit message.
+	//
+
 		{
 			"scope": "comment",
 			"settings": {
@@ -344,6 +504,15 @@
 			"settings": {
 				"foreground": "#F5C024",
 				"fontStyle": "italic"
+			}
+		},
+		{
+			"scope": [
+				"punctuation.definition.string.begin.ts",
+				"punctuation.definition.string.end.ts"
+			],
+			"settings": {
+				"foreground": "#F5C024"
 			}
 		},
 		{
@@ -386,6 +555,30 @@
 			}
 		},
 		{
+			"scope": "source.ts meta.function meta.definition.variable variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.tsx meta.function meta.definition.variable variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.js meta.function meta.definition.variable variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
+			"scope": "source.jsx meta.function meta.definition.variable variable.other.constant",
+			"settings": {
+				"foreground": "#E8E8E3"
+			}
+		},
+		{
 			"scope": "punctuation",
 			"settings": {
 				"foreground": "#D694FA"
@@ -395,6 +588,12 @@
 			"scope": "keyword.operator",
 			"settings": {
 				"foreground": "#DB0000"
+			}
+		},
+		{
+			"scope": "meta.field.declaration.ts keyword.operator.optional.ts",
+			"settings": {
+				"foreground": "#F9A201"
 			}
 		},
 		{
@@ -643,54 +842,6 @@
 			],
 			"settings": {
 				"foreground": "#1F9EFF"
-			}
-		},
-		{
-			"scope": "source.ts meta.function variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.ts meta.block variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.tsx meta.function variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.tsx meta.block variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.js meta.function variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.js meta.block variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.jsx meta.function variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
-			}
-		},
-		{
-			"scope": "source.jsx meta.block variable.other.constant",
-			"settings": {
-				"foreground": "#E8E8E3"
 			}
 		}
 	],
