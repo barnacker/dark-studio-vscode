@@ -878,6 +878,9 @@
 		"function": {
 			"foreground": "#F0612D"
 		},
+		"function.local": {
+			"foreground": "#E8E8E3"
+		},
 		"type": {
 			"foreground": "#F9A201"
 		},
@@ -886,6 +889,9 @@
 		},
 		"class": {
 			"foreground": "#7CB375"
+		},
+		"class.local": {
+			"foreground": "#E8E8E3"
 		},
 		"struct": {
 			"foreground": "#7CB375"
