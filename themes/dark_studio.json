@@ -76,7 +76,7 @@
 		"keybindingLabel.keyBorderBackground": "#272A3366",
 		"input.placeholderForeground": "#CC6A00",
 		"editorLineNumber.foreground": "#5D2400",
-		"editorLineNumber.activeForeground": "#C7C7BD",
+		"editorLineNumber.activeForeground": "#9E9E96",
 		"editorLineNumber.dimmedForeground": "#5D2400",
 		"editorGhostText.foreground": "#CC6A00",
 		"textPreformat.foreground": "#C2C2C2",
