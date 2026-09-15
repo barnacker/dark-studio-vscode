@@ -613,6 +613,12 @@
 			}
 		},
 		{
+			"scope": "storage.modifier",
+			"settings": {
+				"foreground": "#B194FA"
+			}
+		},
+		{
 			"scope": [
 				"entity.name.type",
 				"entity.name.class",
