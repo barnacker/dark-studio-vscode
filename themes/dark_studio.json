@@ -601,18 +601,13 @@
 			}
 		},
 		{
-			"scope": "keyword",
-			"settings": {
-				"foreground": "#B194FA"
-			}
-		},
-		{
 			"scope": [
+				"keyword",
 				"keyword.control.directive",
 				"storage.modifier"
 			],
 			"settings": {
-				"foreground": "#E5780B"
+				"foreground": "#B194FA"
 			}
 		},
 		{
@@ -909,7 +904,7 @@
 			"foreground": "#B194FA"
 		},
 		"modifier": {
-			"foreground": "#E5780B"
+			"foreground": "#B194FA"
 		},
 		"operator": {
 			"foreground": "#D694FA"
