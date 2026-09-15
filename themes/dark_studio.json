@@ -826,7 +826,7 @@
 				"variable.other"
 			],
 			"settings": {
-				"foreground": "#E54910"
+				"foreground": "#E8E8E3"
 			}
 		},
 		{
@@ -835,7 +835,7 @@
 				"variable.other"
 			],
 			"settings": {
-				"foreground": "#E54910"
+				"foreground": "#E8E8E3"
 			}
 		},
 		{
@@ -850,7 +850,7 @@
 	],
 	"semanticTokenColors": {
 		"variable": {
-			"foreground": "#E54910"
+			"foreground": "#E8E8E3"
 		},
 		"variable.readonly": {
 			"foreground": "#9EF019"
