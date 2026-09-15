@@ -60,7 +60,7 @@
 		"activityBar.foreground": "#FF8300",
 		"activityBar.inactiveForeground": "#FF8300",
 		"modernActivityBarItem.activeForeground": "#DB0000",
-		"modernActivityBarItem.activeBackground": "#00000000",
+		"modernActivityBarItem.activeBackground": "#170700",
 		"modernActivityBarItem.hoverForeground": "#FF8300",
 		"notifications.foreground": "#FF8300",
 		"notificationCenterHeader.foreground": "#FF8300",
