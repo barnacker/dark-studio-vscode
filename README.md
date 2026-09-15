@@ -3,13 +3,13 @@
 Dark Studio color theme for Visual Studio Code.
 
 Built from the Dark Studio palette (`Dark_Studio.obt`), structurally a recolor
-of the stock Dark Modern / Dark+ theme set (328 color tokens, 23 token colors,
-fully self-contained — no `include`).
+of the stock Dark Modern / Dark+ theme set (333 color tokens, 47 token colors,
+24 semantic token colors, fully self-contained — no `include`).
 
 ## Install (VSIX)
 
 ```
-code --install-extension ./dark-studio-1.0.0.vsix
+code --install-extension ./dark-studio-1.0.1.vsix
 ```
 
 or from VS Code: `Ctrl+Shift+P` → *Install from VSIX…*.
