@@ -4,7 +4,7 @@
 	"semanticHighlighting": true,
 	"colors": {
 		"activityBar.background": "#00040B",
-		"sideBar.background": "#01171E",
+		"sideBar.background": "#0A0806",
 		"panel.background": "#00040B",
 		"titleBar.activeBackground": "#00040B",
 		"titleBar.inactiveBackground": "#00040B",
@@ -217,6 +217,7 @@
 		"editor.findMatchHighlightBackground": "#B88A1640",
 		"editor.findMatchHighlightBorder": "#B88A16",
 		"editor.findRangeHighlightBackground": "#152E5566",
+		"editorHoverWidget.background": "#01171E",
 		"editor.hoverHighlightBackground": "#13284B40",
 		"editor.rangeHighlightBackground": "#13284B40",
 		"editor.symbolHighlightBackground": "#152E5566",
