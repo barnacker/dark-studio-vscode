@@ -218,6 +218,7 @@
 		"editor.findMatchHighlightBorder": "#B88A16",
 		"editor.findRangeHighlightBackground": "#152E5566",
 		"editorHoverWidget.background": "#01171E",
+		"editorHoverWidget.border": "#1F9EFF",
 		"editor.hoverHighlightBackground": "#13284B40",
 		"editor.rangeHighlightBackground": "#13284B40",
 		"editor.symbolHighlightBackground": "#152E5566",
