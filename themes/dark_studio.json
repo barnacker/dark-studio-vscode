@@ -203,10 +203,14 @@
 		"editor.selectionBackground": "#13284B99",
 		"editor.inactiveSelectionBackground": "#13284B55",
 		"editor.selectionHighlightBackground": "#152E5566",
-		"editor.wordHighlightBackground": "#13284B88",
-		"editor.wordHighlightBorder": "#284CB8",
-		"editor.wordHighlightStrongBackground": "#152E55AA",
-		"editor.wordHighlightStrongBorder": "#476BD7",
+		// word highlight (occurrences under cursor, symbol path: read/write) — maroon field #170700 fill, deep red border #7D1224 (--red5);
+		// text-occurrence fallback gets the same treatment (symbol support absent -> textual occurrence path)
+		"editor.wordHighlightBackground": "#17070088",
+		"editor.wordHighlightBorder": "#7D1224",
+		"editor.wordHighlightStrongBackground": "#170700AA",
+		"editor.wordHighlightStrongBorder": "#7D1224",
+		"editor.wordHighlightTextBackground": "#17070088",
+		"editor.wordHighlightTextBorder": "#7D1224",
 		"editor.findMatchBackground": "#B88A1680",
 		"editor.findMatchBorder": "#EABC48",
 		"editor.findMatchHighlightBackground": "#B88A1640",
