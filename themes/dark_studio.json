@@ -206,12 +206,12 @@
 		// word highlight (occurrences under cursor) — edit-box maroon #170700, classic (no alpha); border = same maroon,
 		// since a true "remove the border" is not expressible in the theme schema (border is drawn when set);
 		// text-occurrence fallback gets the same treatment (symbol support absent -> textual occurrence path)
-		"editor.wordHighlightBackground": "#170700",
-		"editor.wordHighlightBorder": "#170700",
-		"editor.wordHighlightStrongBackground": "#170700",
-		"editor.wordHighlightStrongBorder": "#170700",
-		"editor.wordHighlightTextBackground": "#170700",
-		"editor.wordHighlightTextBorder": "#170700",
+		"editor.wordHighlightBackground": "#300F00",
+		"editor.wordHighlightBorder": "#300F00",
+		"editor.wordHighlightStrongBackground": "#300F00",
+		"editor.wordHighlightStrongBorder": "#300F00",
+		"editor.wordHighlightTextBackground": "#300F00",
+		"editor.wordHighlightTextBorder": "#300F00",
 		"editor.findMatchBackground": "#B88A1680",
 		"editor.findMatchBorder": "#EABC48",
 		"editor.findMatchHighlightBackground": "#B88A1640",
