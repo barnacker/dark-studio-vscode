@@ -40,7 +40,7 @@
 		"modernActivityBar.hoverBackground": "#152E5533",
 		"inputOption.activeBackground": "#13284B99",
 		"foreground": "#FF8300",
-		"editor.foreground": "#C7C7BD",
+		"editor.foreground": "#FF8300",
 		"editor.lineHighlightBackground": "#011F27",
 		"editor.lineHighlight.activeBackground": "#011F27",
 		"terminal.foreground": "#FF8300",
