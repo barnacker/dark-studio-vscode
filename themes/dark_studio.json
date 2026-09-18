@@ -882,8 +882,7 @@
 			"foreground": "#1F9EFF"
 		},
 		"method": {
-			"foreground": "#E5780B",
-			"fontStyle": "bold"
+			"foreground": "#E5780B"
 		},
 		"function": {
 			"foreground": "#F0612D"
